@@ -2,9 +2,8 @@
 @echo off
 @title The adventures of Batch
 color 0a
-if not exist savegame.cmd
-@echo set x=1 > savegame.cmd
-@echo set y=1 >> savegame.cmd 
+if not exist savegame.cmd echo set x=1 > savegame.cmd
+if not exist savegame.cmd echo set y=1 >> savegame.cmd 
 :main
 type menu.txt
 
