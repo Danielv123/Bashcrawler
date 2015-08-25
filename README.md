@@ -8,8 +8,11 @@ The adventures of Batch is an interesting story driven adventure game where you 
 #How to contribute
 
 To write your own level, you need a few basic things.
+
 1: Windows or some other OS allowing for execution of batch files (.bat)
+
 2: A text editor (notepad)
+
 3: A github profile for sending pull requests.
 
 To actually make the level: 
