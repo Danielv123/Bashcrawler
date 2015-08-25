@@ -1,19 +1,18 @@
 :int
-
-title The trip
+@echo off
+@title The adventures of Batch
 color 0a
-echo off
-cls
-
+if not exist savegame.cmd
+@echo set x=1 > savegame.cmd
+@echo set y=1 >> savegame.cmd 
 :main
 type menu.txt
 
 set /p selection=">_ "
-if "%selection%" == "start" set x=1
-if "%selection%" == "start" set y=1
-if "%selection%" == "start" call %selection%.bat
-
-
+if "%selection%" == "start" call start.bat
+if "%selection%" == "start game" call start.bat
+if "%selection%" == "load" call savegame.cmd
+if "%selection%" == "load game" call savegame.cmd
 
 
 

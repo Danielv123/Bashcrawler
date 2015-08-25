@@ -21,11 +21,12 @@ if %x%==2 if %y%==2 goto 002002
 cls
 rem 001001 is a debug value showing the levelID of the current level.
 echo 001001
-echo You are in a forest with trees. The path tho the north and east is blocked.
+echo You are in a forest with trees. The path to the north and east is blocked.
 echo.
 echo Aviable commands:
 echo west, south, explore, quit
 rem Set variable to input allowing you to choose commands listed above.
+
 set /p selection=">_ "
 
 cls
@@ -51,7 +52,7 @@ if "%selection%" == "quit" goto quit
 
 rem Delay to allow for reading whatever happened including all the puns. Using ping as some systems (including mine) doesen't support WAIT or TIMEOUT by default. Time in milliseconds.
 PING 1.1.1.1 -n 1 -w 4000 >NUL
-
+call save.bat
 
 goto game
 
@@ -64,29 +65,33 @@ echo.
 echo Aviable commands:
 echo north, west, explore, quit
 
-cls
+set /p selection=">_ "
 
-if "%selection%" == "north" echo I just said that the path was blocked.
-if "%selection%" == "north" echo You dumbass.
+cls
+if "%selection%" == "north" set /a y=%y%-1
+if "%selection%" == "north" echo You walked through a wide passage north of the plains.
  
-if "%selection%" == "east" echo The path is blocked by an ant.
-if "%selection%" == "east" echo You suddenly feel a deep fear of small ants, and find yourself running away.
+if "%selection%" == "east" echo The path is blocked by an invisible buffalo.
+if "%selection%" == "east" echo You suddenly feel a deep fear of invisible buffalos, and calmly walk away.
 
 if "%selection%" == "west" set /a x=%x%+1
-if "%selection%" == "west" echo You walked through a tight passage west of the forest.
+if "%selection%" == "west" echo You just went for a stroll, and suddenly you were a tile farther west.
 
-if "%selection%" == "south" set /a y=%y%+1
-if "%selection%" == "south" echo You walked through a wide passage south of the forest.
+if "%selection%" == "south" rem set /a y=%y%+1
+if "%selection%" == "south" echo There seems like there should be a passage here, but its probably not implemented just yet.
 
-if "%selection%" == "explore" echo You found nothing to explore.
+if "%selection%" == "explore" echo You can't see an invisible buffalo to the east and other than that there seems like there isn't much noteworthy.
 
 if "%selection%" == "quit" goto quit
 
 PING 1.1.1.1 -n 1 -w 4000 >NUL
+call save.bat
 
 rem goto game loops to the top of the page, repeating the level creation and everything else.
 goto game
-pause
 
+
+
+pause
 rem This is the part about leaving the game for the menu screen.
 :quit
