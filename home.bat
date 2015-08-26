@@ -14,6 +14,8 @@ if "%selection%" == "new game" goto newgame
 if "%selection%" == "load" call savegame.cmd
 if "%selection%" == "load game" call savegame.cmd
 
+if "%selection%" == "about" call about.bat
+
 if "%selection%" == "quit" goto quit
 goto int
 pause

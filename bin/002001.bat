@@ -22,6 +22,7 @@ if "%selection%" == "south" set /a y=%y%+1
 if "%selection%" == "south" echo You walk away from the forrest into an even bigger plain.
 
 if "%selection%" == "explore" echo You felt a sudden rush of adrenaline comming through your body. It was like you had to explore, and there was no way of stopping it. The only explorable place in this tile was the forest. Walking in you heard noises and cracking branches around you, and you were quite sure that some of them must have been from someone else, but the adrenaline in your veins keep you going. Deep into the forest you find a tomb, but its blocked, and you have to walk away.
+if "%selection%" == "explore" pause
 
 if "%selection%" == "quit" goto quit
 
